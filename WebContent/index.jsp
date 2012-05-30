@@ -15,44 +15,41 @@
 			background-color: #ffee55;
 		}
 	</style>
-	<title>Contact Manager - Struts2 Hibernate Example</title>
+	<title>Raum Manager - Struts2 Hibernate Example</title>
 </head>
 <body>
 
-<h1>Contact Manager</h1>
+<h1>Raum Manager</h1>
 <s:actionerror/>
 
 <s:form action="add" method="post">
-	<s:textfield name="contact.firstName" label="Firstname"/>
-	<s:textfield name="contact.lastName" label="Lastname"/>
-	<s:textfield name="contact.emailId" label="Email"/>
-	<s:textfield name="contact.cellNo" label="Cell No."/>
-	<s:textfield name="contact.website" label="Homepage"/>
-	<s:textfield name="contact.birthDate" label="Birthdate"/>
-	<s:submit value="Add Contact" align="center"/>
+	<s:textfield name="raum.groesse" label="groesse"/>
+	<s:textfield name="raum.mietpreis" label="mietpreis"/>
+	<s:textfield name="raum.etagenId" label="etagenId"/>
+	<s:textfield name="raum.nutzungsArtId" label="nutzungsArtId"/>
+	<s:submit value="Add Raum" align="center"/>
 </s:form>
 
 
-<h2>Contacts</h2>
-<table id="contact" border="1">
+<h2>Raeume</h2>
+<table border="1">
 <tr>
-	<th>Name</th>
-	<th>Email</th>
-	<th>Cell No.</th>
-	<th>Birthdate</th>
-	<th>Homepage</th>
-	<th>Delete</th>
+	<th>ID</th>
+	<th>Groesse</th>
+	<th>Mietpreis</th>
+	<th>EtagenId</th>
+	<th>NutzungsArtId</th>
 </tr>
-<s:iterator value="contactList" var="contact">
+<s:iterator value="raumList" >
 	<tr>
-		<td><s:property value="lastName"/>, <s:property value="firstName"/> </td>
-		<td><s:property value="emailId"/></td>
-		<td><s:property value="cellNo"/></td>
-		<td><s:property value="birthDate"/></td>
-		<td><a href="<s:property value="website"/>">link</a></td>
-		<td><a href="delete?id=<s:property value="id"/>">delete</a></td>
+		<td><s:property value="id"/></td>
+		<td><s:property value="groesse"/></td>
+		<td><s:property value="mietpreis"/></td>
+		<td><s:property value="etagenId"/></td>
+		<td><s:property value="nutzungsArtId"/></td>
 	</tr>	
 </s:iterator>
 </table>
+
 </body>
 </html>
