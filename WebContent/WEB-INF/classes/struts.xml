@@ -11,19 +11,24 @@
 	<package name="default" extends="struts-default" namespace="/">
 
 		<action name="add"
-			class="net.viralpatel.contact.view.ContactAction" method="add">
+			class="net.viralpatel.contact.view.RaumAction" method="add">
 			<result name="success" type="chain">index</result>
 			<result name="input" type="chain">index</result>
 		</action>
 
 		<action name="delete"
-			class="net.viralpatel.contact.view.ContactAction" method="delete">
+			class="net.viralpatel.contact.view.RaumAction" method="delete">
 			<result name="success" type="chain">index</result>
 		</action>
 
 		<action name="index"
-			class="net.viralpatel.contact.view.ContactAction">
+			class="net.viralpatel.contact.view.RaumAction">
 			<result name="success">index.jsp</result>
+		</action>
+		
+		<action name="list"
+			class="net.viralpatel.contact.view.RaumAction">
+			<result name="success">RaumList.jsp</result>
 		</action>
 	</package>
 </struts>
